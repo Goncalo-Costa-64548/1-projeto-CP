@@ -1,0 +1,29 @@
+# Standalone Spark cluster for local "cluster" experiments.
+#   docker compose -f docker/docker-compose.yml up -d --scale spark-worker=2
+# The project folder (code) is mounted at /opt/project and the work folder
+# (data, outputs, event logs; default ~/cp-proj1-work) at /opt/work on every
+# node, so the driver and the executors see the same paths.
+x-spark: &spark
+  image: apache/spark:4.0.1-python3
+  volumes:
+    - ..:/opt/project
+    - ${WORK:-${HOME}/cp-proj1-work}:/opt/work
+  environment:
+    SPARK_NO_DAEMONIZE: "true"
+
+services:
+  spark-master:
+    <<: *spark
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host spark-master
+    ports:
+      - "8080:8080"   # master UI
+      - "4040:4040"   # driver UI of the submitted application
+      - "7077:7077"
+
+  spark-worker:
+    <<: *spark
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
+      spark://spark-master:7077 --cores ${WORKER_CORES:-2} --memory ${WORKER_MEMORY:-1g}
+    depends_on:
+      - spark-master

@@ -1,0 +1,16 @@
+config,op,wall_median_s,cpu_median_s,input_MB,shuffle_write_MB,tasks
+o1_agg+o2_agg+m3_window+cache,m2,13.37,36.07,826.15,1.82,98
+o1_agg+o2_agg+m3_window+cache,m1,56.44,168.1,1348.92,0.0,193
+o1_agg+o2_agg+m3_window+cache,o1,18.15,57.88,1652.29,7.48,201
+o1_agg+o2_agg+m3_window+cache,o2,36.95,99.92,837.58,63.75,922
+o1_agg+o2_agg+m3_window+cache,m3,16.02,35.05,826.15,1.73,100
+o1_agg+o2_agg+m3_window+cache+cache_nocompress,m2,11.7,32.96,989.19,1.82,98
+o1_agg+o2_agg+m3_window+cache+cache_nocompress,m1,31.98,117.28,1511.97,0.0,193
+o1_agg+o2_agg+m3_window+cache+cache_nocompress,o1,16.54,58.29,1978.38,7.48,201
+o1_agg+o2_agg+m3_window+cache+cache_nocompress,o2,28.91,96.3,1008.02,63.75,922
+o1_agg+o2_agg+m3_window+cache+cache_nocompress,m3,8.28,31.86,989.19,1.73,100
+o1_agg+o2_agg+m3_window+cache+cache_nocompress+o2_ids,m2,13.99,36.48,989.19,1.82,98
+o1_agg+o2_agg+m3_window+cache+cache_nocompress+o2_ids,m1,31.47,111.91,1511.97,0.0,193
+o1_agg+o2_agg+m3_window+cache+cache_nocompress+o2_ids,o1,20.51,57.08,1978.38,7.48,201
+o1_agg+o2_agg+m3_window+cache+cache_nocompress+o2_ids,o2,40.76,96.05,997.85,27.85,923
+o1_agg+o2_agg+m3_window+cache+cache_nocompress+o2_ids,m3,12.76,34.3,989.19,1.73,100

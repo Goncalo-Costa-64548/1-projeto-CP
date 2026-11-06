@@ -1,0 +1,6 @@
+config,reps,wall_median_s,wall_min_s,wall_max_s,cpu_median_s,gc_median_s,stages,tasks,input_MB,shuffle_write_MB,spill_disk_MB,cache_mem_MB,cache_disk_MB
+none,3,144.2,134.8,151.1,617.0,43.8,34,851,4123.6,547.0,233.8,0.0,0.0
+o1_agg,3,139.6,127.0,140.6,585.0,43.9,35,945,4638.4,168.7,0.0,0.0,0.0
+o1_agg+o2_agg,3,130.6,120.7,141.1,518.4,35.6,31,1519,3620.2,76.1,0.0,0.0,0.0
+o1_agg+o2_agg+m3_window,3,113.5,101.7,148.4,460.6,31.2,27,1420,3105.3,75.3,0.0,0.0,0.0
+o1_agg+o2_agg+m3_window+cache,3,99.3,81.0,151.0,372.3,50.0,28,1516,5491.1,75.3,0.0,826.1,0.0

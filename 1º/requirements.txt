@@ -1,0 +1,5 @@
+pyspark==4.0.1
+# only for the analysis scripts (summarise.py, compare_outputs.py, plot_scaling.py)
+pandas
+pyarrow
+matplotlib
